@@ -73,8 +73,13 @@ def MotionDetection(video):
             key = cv2.waitKey(1)
             # if q entered whole process will stop
             if key == ord('q'):
-                # if something is movingthen it append the end time of movement
-                isclosed = 1
+                # if something is moving then it append the end time of movement
+                #isclosed = 1
+                while True:
+                    key2 = cv2.waitKey(1)
+                    if key2 == ord('q'):
+                        break
+                    cv2.imshow("Color Frame", frame)
                 break
         else:
             break
