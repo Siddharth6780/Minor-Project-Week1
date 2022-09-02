@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
-from Motion_Detection import *
+import sys
+
+sys.path.insert(0, './Helper')
+from Motion_Detection import MotionDetection
 
 def main():
     while True:
