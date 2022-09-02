@@ -1,28 +1,6 @@
 import cv2
 import numpy as np
-
-
-def ColorDetection(frame):
-
-    # Converting to HSV Color frame
-    hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-
-    # Blue Color 63, 72, 49
-    low_blue = np.array([50, 50, 49])
-    high_blue = np.array([255, 255, 255])
-    blue_mask = cv2.inRange(hsv_frame, low_blue, high_blue)
-    blue = cv2.bitwise_and(frame, frame, mask = blue_mask)
-    blue_mask = cv2.medianBlur(blue_mask, 5)
-
-    # Getting the contours
-    contours,_ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    for cnts in contours:
-        area = cv2.contourArea(cnts)
-        if area > 1:
-            return True
-
-    return False
-
+from Color_Detection import *
 
 def MotionDetection(video):
     static_back = None
@@ -71,10 +49,9 @@ def MotionDetection(video):
             cv2.imshow("Color Frame", frame)
 
             key = cv2.waitKey(1)
+            
             # if q entered whole process will stop
             if key == ord('q'):
-                # if something is moving then it append the end time of movement
-                #isclosed = 1
                 while True:
                     key2 = cv2.waitKey(1)
                     if key2 == ord('q'):
@@ -84,23 +61,3 @@ def MotionDetection(video):
         else:
             break
     return
-
-
-def main():
-    while True:
-        # Capturing video
-        video = cv2.VideoCapture('pebrin database/Video-7_2019-08-14.wmv')
-        isclosed = 0
-
-        MotionDetection(video)
-
-        if isclosed:
-            break
-
-    video.release()
-
-    # Destroying all the windows
-    cv2.destroyAllWindows()
-
-if __name__== "__main__":
-    main()
