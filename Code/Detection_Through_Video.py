@@ -3,7 +3,7 @@ import numpy as np
 import sys
 
 sys.path.insert(0, './Helper')
-from Motion_Detection import MotionDetection
+from Helper.Motion_Detection import MotionDetection
 isclosed = 0
 
 def main():

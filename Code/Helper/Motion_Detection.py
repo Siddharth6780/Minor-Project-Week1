@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from Color_Detection import *
+from Helper.Color_Detection import *
 
 def MotionDetection(video):
 
@@ -63,7 +63,7 @@ def MotionDetection(video):
 
             # Break the process if Key e is pressed
             if key == ord('e'):
-                return False
+                break
         else:
             break
     return True
