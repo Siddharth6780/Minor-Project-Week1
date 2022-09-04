@@ -13,9 +13,6 @@ def main():
         video = cv2.VideoCapture('../pebrin database/Video-7_2019-08-14.wmv')
 
         if MotionDetection(video) == False:
-            break 
-
-        if isclosed:
             break
 
     video.release()

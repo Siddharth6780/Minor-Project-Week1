@@ -6,7 +6,7 @@ def ColorDetection(frame):
     # Converting to HSV Color frame
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # Blue Color 63, 72, 49
+    # Blue color detection
     low_blue = np.array([50, 50, 49])
     high_blue = np.array([255, 255, 255])
     blue_mask = cv2.inRange(hsv_frame, low_blue, high_blue)
