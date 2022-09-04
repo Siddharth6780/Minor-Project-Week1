@@ -6,15 +6,11 @@ sys.path.insert(0, './Helper')
 from Motion_Detection import MotionDetection
 
 def main():
-    while True:
-        # Capturing video
-        video = cv2.VideoCapture(0)
-        isclosed = 0
+    # Capturing video
+    video = cv2.VideoCapture(0)
+    isclosed = 0
 
-        MotionDetection(video)
-
-        if isclosed:
-            break
+    MotionDetection(video)
 
     video.release()
 
