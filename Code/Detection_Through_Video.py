@@ -4,7 +4,6 @@ import sys
 
 sys.path.insert(0, './Helper')
 from Motion_Detection import MotionDetection
-isclosed = 0
 
 def main():
     while True:
@@ -13,9 +12,6 @@ def main():
         video = cv2.VideoCapture('../pebrin database/Video-7_2019-08-14.wmv')
 
         if MotionDetection(video) == False:
-            break 
-
-        if isclosed:
             break
 
     video.release()
