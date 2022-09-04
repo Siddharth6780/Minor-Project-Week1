@@ -3,7 +3,9 @@ import numpy as np
 from Color_Detection import *
 
 def MotionDetection(video):
+
     static_back = None
+
     # Infinite while loop to treat stack of image as video
     while True:
         
@@ -50,7 +52,7 @@ def MotionDetection(video):
 
             key = cv2.waitKey(1)
             
-            # if q entered whole process will stop
+            # If q entered whole process will stop
             if key == ord('q'):
                 while True:
                     key2 = cv2.waitKey(1)
@@ -58,6 +60,10 @@ def MotionDetection(video):
                         break
                     cv2.imshow("Color Frame", frame)
                 break
+
+            # Break the process if Key e is pressed
+            if key == ord('e'):
+                return False
         else:
             break
-    return
+    return True
