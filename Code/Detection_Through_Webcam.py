@@ -8,7 +8,6 @@ from Motion_Detection import MotionDetection
 def start_cam_analyze():
     # Capturing video
     video = cv2.VideoCapture(0)
-    isclosed = 0
 
     MotionDetection(video)
 
