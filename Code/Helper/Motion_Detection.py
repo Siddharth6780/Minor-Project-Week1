@@ -48,21 +48,21 @@ def MotionDetection(video):
                     cv2.putText(frame, "Status: {}".format('Color Detected'), (20, 25), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2)
 
             # Displaying color frame with contour of motion of object
-            cv2.imshow("Color Frame", frame)
+            cv2.imshow("Bacteria Detection [Press X to Exit]", frame)
 
             key = cv2.waitKey(1)
             
             # If q entered whole process will stop
-            if key == ord('q'):
+            if key == ord('p'):
                 while True:
                     key2 = cv2.waitKey(1)
-                    if key2 == ord('q'):
+                    if key2 == ord('p'):
                         break
-                    cv2.imshow("Color Frame", frame)
+                    cv2.imshow("Bacteria Detection [Press X to Exit]", frame)
                 break
 
             # Break the process if Key e is pressed
-            if key == ord('e'):
+            if key == ord('x'):
                 return False
         else:
             break

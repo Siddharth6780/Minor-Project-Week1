@@ -5,7 +5,7 @@ import sys
 sys.path.insert(0, './Helper')
 from Motion_Detection import MotionDetection
 
-def main():
+def start_cam_analyze():
     # Capturing video
     video = cv2.VideoCapture(0)
     isclosed = 0
@@ -17,5 +17,5 @@ def main():
     # Destroying all the windows
     cv2.destroyAllWindows()
 
-if __name__== "__main__":
-    main()
+# if __name__== "__main__":
+#     main()
