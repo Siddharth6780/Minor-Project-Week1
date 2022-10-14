@@ -62,13 +62,8 @@ def MotionDetection(video):
                 break
 
             # Break the process if Key e is pressed
-<<<<<<< HEAD
             if key == ord('x'):
                 return False
-=======
-            if key == ord('e'):
-                break
->>>>>>> b56cf0465c5657d01f017bb61ceeac8b3cb296ad
         else:
             break
     return True
