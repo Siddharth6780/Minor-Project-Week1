@@ -8,7 +8,7 @@ sys.path.insert(0, './Helper')
 from Helper.Motion_Detection import MotionDetection
 isclosed = 0
 
-def main():
+def start_vid():
     while True:
     
         list_of_files = glob.glob('/home/pi/*.mkv') # * means all if need specific format then *.csv
@@ -28,5 +28,5 @@ def main():
     # Destroying all the windows
     cv2.destroyAllWindows()
 
-if __name__== "__main__":
-    main()
+# if __name__== "__main__":
+#     main()

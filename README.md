@@ -1,2 +1,2 @@
 # Minor-Project-Week1
-Initial Detection on Pebrine Database
+Disease detection in Pebrine Database
