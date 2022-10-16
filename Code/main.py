@@ -2,6 +2,9 @@ import cv2
 import numpy as np
 import sys
 import os
+
+from Code.Detection_Through_Video import start_vid
+from Code.Detection_Through_Webcam import start_cam_analyze
 sys.path.insert(0, './Helper')
 import streamlit as st
 from Helper.Motion_Detection import MotionDetection
@@ -11,35 +14,13 @@ c1, c2 , c3= st.columns(3)
 with c1:
     if st.button("Detection By Video"):
 
-        # Capturing video
-        video = cv2.VideoCapture('../pebrin database/Video-7_2019-08-14.wmv')
-        isclosed = 0
-
-        MotionDetection(video)
-
-
-
-        video.release()
-
-        # Destroying all the windows
-        cv2.destroyAllWindows()
+        start_vid()
 
 
 with c2:
     if st.button("Detection By Live Camera"):
 
-        video = cv2.VideoCapture(0)
-        isclosed = 0
-
-        MotionDetection(video)
-
-
-
-
-        video.release()
-
-        # Destroying all the windows
-        cv2.destroyAllWindows()
+        start_cam_analyze()
 
 
 with c3:
